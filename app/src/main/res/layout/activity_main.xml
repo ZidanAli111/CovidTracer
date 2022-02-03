@@ -463,6 +463,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/totalDeath"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@string/bold"
@@ -473,6 +474,7 @@
 
 
                     <TextView
+                        android:id="@+id/todayDeath"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@string/regular"
