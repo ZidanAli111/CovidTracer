@@ -43,7 +43,6 @@ public class CountryData {
         this.countryInfo = countryInfo;
     }
 
-
     public Map<String, String> getCountryInfo() {
         return countryInfo;
     }
