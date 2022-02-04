@@ -12,22 +12,19 @@
         android:layout_height="320dp"
         android:background="@color/color_primary">
 
-
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="-40dp"
-            android:src="@drawable/virus" />
-
+            android:src="@drawable/ic_virus" />
 
         <ImageView
             android:id="@+id/virus1"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/virus" />
-
+            android:src="@drawable/ic_virus" />
 
         <ImageView
             android:layout_width="50dp"
@@ -36,8 +33,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="10dp"
             android:layout_toStartOf="@+id/virus1"
-            android:src="@drawable/virus" />
-
+            android:src="@drawable/ic_virus" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -71,6 +67,7 @@
 
 
             <TextView
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -86,12 +83,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -133,7 +131,7 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/blue" />
+                            android:background="@color/blue_pie" />
 
 
                         <TextView
@@ -156,7 +154,7 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/green" />
+                            android:background="@color/green_pie" />
 
 
                         <TextView
@@ -179,7 +177,7 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/red" />
+                            android:background="@color/red_pie" />
 
 
                         <TextView
@@ -211,6 +209,7 @@
 
         </LinearLayout>
 
+
     </RelativeLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -221,17 +220,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:paddingHorizontal="12dp"
             android:layout_marginBottom="10dp"
+            android:padding="2dp"
             android:columnCount="2">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_height="wrap_content"
                 android:layout_width="@dimen/card_width"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:strokeColor="@color/color_primary"
-                android:padding="12dp"
                 android:layout_gravity="center"
+
+                android:layout_marginTop="20dp"
+                android:padding="12dp"
+                app:strokeColor="@color/color_primary"
                 app:strokeWidth="1dp">
 
 
@@ -240,6 +241,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="18dp"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -262,42 +264,41 @@
                             android:textSize="@dimen/text_size" />
 
 
-
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/totalConfirm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/bold"
-                        android:text="45645664"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title_size"
-                        android:layout_marginTop="7dp" />
+                        tools:text="45645664" />
 
 
                     <TextView
                         android:id="@+id/todayConfirm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/regular"
-                        android:text="(+50)"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size"
-                        android:layout_marginTop="7dp" />
+                        tools:text="(+50)" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-
             <com.google.android.material.card.MaterialCardView
-                android:layout_height="wrap_content"
                 android:layout_width="@dimen/card_width"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:strokeColor="@color/color_primary"
-                android:padding="12dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:padding="12dp"
+                app:strokeColor="@color/color_primary"
                 app:strokeWidth="1dp">
 
 
@@ -306,6 +307,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="18dp"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -315,7 +317,7 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/blue" />
+                            android:background="@color/blue_pie" />
 
 
                         <TextView
@@ -328,41 +330,40 @@
                             android:textSize="@dimen/text_size" />
 
 
-
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/totalActive"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/bold"
-                        android:text="95645664"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title_size"
-                        android:layout_marginTop="7dp" />
+                        tools:text="95645664" />
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/regular"
                         android:text=""
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size"
-                        android:layout_marginTop="7dp" />
+                        android:textSize="@dimen/text_size" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_height="wrap_content"
                 android:layout_width="@dimen/card_width"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:strokeColor="@color/color_primary"
-                android:padding="12dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
+                android:padding="12dp"
+                app:strokeColor="@color/color_primary"
                 app:strokeWidth="1dp">
 
 
@@ -371,6 +372,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="18dp"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -380,7 +382,7 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/green" />
+                            android:background="@color/green_pie" />
 
 
                         <TextView
@@ -393,42 +395,41 @@
                             android:textSize="@dimen/text_size" />
 
 
-
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/totalRecovered"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/bold"
-                        android:text="56645664"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title_size"
-                        android:layout_marginTop="7dp" />
+                        tools:text="56645664" />
 
 
                     <TextView
                         android:id="@+id/todayRecovered"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/regular"
-                        android:text="(+89)"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size"
-                        android:layout_marginTop="7dp" />
+                        tools:text="(+89)" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_height="wrap_content"
                 android:layout_width="@dimen/card_width"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:strokeColor="@color/color_primary"
-                android:padding="12dp"
-                android:layout_marginTop="12dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:padding="12dp"
+                app:strokeColor="@color/color_primary"
                 app:strokeWidth="1dp">
 
 
@@ -437,6 +438,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="18dp"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -459,43 +461,42 @@
                             android:textSize="@dimen/text_size" />
 
 
-
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/totalDeath"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/bold"
-                        android:text="76645664"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title_size"
-                        android:layout_marginTop="7dp" />
+                        tools:text="76645664" />
 
 
                     <TextView
                         android:id="@+id/todayDeath"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/regular"
-                        android:text="(+30)"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size"
-                        android:layout_marginTop="7dp" />
+                        tools:text="(+30)" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_height="wrap_content"
                 android:layout_width="@dimen/card_width"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_marginTop="12dp"
-
-                app:strokeColor="@color/color_primary"
-                android:padding="12dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:padding="12dp"
+                app:strokeColor="@color/color_primary"
                 app:strokeWidth="1dp">
 
 
@@ -504,6 +505,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="18dp"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -526,28 +528,27 @@
                             android:textSize="@dimen/text_size" />
 
 
-
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/totalTests"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/bold"
-                        android:text="85645664"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title_size"
-                        android:layout_marginTop="7dp" />
+                        tools:text="85645664" />
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:fontFamily="@string/regular"
                         android:text=""
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size"
-                        android:layout_marginTop="7dp" />
+                        android:textSize="@dimen/text_size" />
 
                 </LinearLayout>
 
