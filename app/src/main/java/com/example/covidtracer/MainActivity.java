@@ -43,22 +43,35 @@ public class MainActivity extends AppCompatActivity {
 
     private List<CountryData> list;
 
+    String country = "India";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        list = new ArrayList<>();
+
+        if (getIntent().getStringExtra("country")!=null)
+        {
+            country=getIntent().getStringExtra("country");
+        }
+
         init();
 
-        findViewById(R.id.cname).setOnClickListener(new View.OnClickListener() {
+        TextView cname= findViewById(R.id.cname);
+        cname.setText(country);
+
+                cname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(MainActivity.this,CountryActivity.class));
+                startActivity(new Intent(MainActivity.this, CountryActivity.class));
             }
         });
 
-        list = new ArrayList<>();
+
 
         ApiUtilities.getApiInterface().getCountryData()
                 .enqueue(new Callback<List<CountryData>>() {
@@ -68,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
                         list.addAll(response.body());
 
                         for (int i = 0; i < list.size(); i++) {
-                            if (list.get(i).getCountry().equals("India")) {
+
+                            if (list.get(i).getCountry().equals(country)) {
 
                                 int confirm = Integer.parseInt(list.get(i).getCases());
                                 int active = Integer.parseInt(list.get(i).getActive());

@@ -1,12 +1,15 @@
 package com.example.covidtracer;
 
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.covidtracer.api.ApiUtilities;
 import com.example.covidtracer.api.CountryData;
@@ -23,21 +26,25 @@ public class CountryActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<CountryData> list;
     private ProgressDialog dialog;
+    private EditText searchBar;
+    private CountryAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country);
 
-        recyclerView=findViewById(R.id.countries);
-        list=new ArrayList<>();
+        recyclerView = findViewById(R.id.countries);
+        list = new ArrayList<>();
+        searchBar = findViewById(R.id.searchBar);
 
-        dialog=new ProgressDialog(this);
+        dialog = new ProgressDialog(this);
         dialog.setMessage("Loading...");
         dialog.setCancelable(false);
         dialog.show();
 
-        CountryAdapter adapter=new CountryAdapter(this,list);
+        adapter = new CountryAdapter(this, list);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
@@ -57,8 +64,37 @@ public class CountryActivity extends AppCompatActivity {
             public void onFailure(Call<List<CountryData>> call, Throwable t) {
 
                 dialog.dismiss();
-                Toast.makeText(CountryActivity.this,""+t.getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(CountryActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                filter(editable.toString());
+            }
+        });
+    }
+
+    private void filter(String text) {
+        List<CountryData> filterList = new ArrayList<>();
+
+        for (CountryData items : list) {
+            if (items.getCountry().toLowerCase().contains(text.toLowerCase())) {
+                filterList.add(items);
+            }
+        }
+        adapter.filterList(filterList);
     }
 }

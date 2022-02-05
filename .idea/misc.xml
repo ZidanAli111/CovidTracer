@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/CovidTracer/app/src/main/res/drawable/ic_search.xml" value="0.2595" />
         <entry key="..\:/CovidTracer/app/src/main/res/drawable/ic_virus.xml" value="0.2595" />
+        <entry key="..\:/CovidTracer/app/src/main/res/drawable/search_back.xml" value="0.2595" />
         <entry key="..\:/CovidTracer/app/src/main/res/layout/activity_country.xml" value="0.264" />
         <entry key="..\:/CovidTracer/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/CovidTracer/app/src/main/res/layout/country_item_layout.xml" value="0.22826086956521738" />
