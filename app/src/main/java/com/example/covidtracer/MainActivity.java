@@ -1,6 +1,8 @@
 package com.example.covidtracer;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
+
+        findViewById(R.id.cname).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(MainActivity.this,CountryActivity.class));
+            }
+        });
 
         list = new ArrayList<>();
 
@@ -123,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         todayRecovered = findViewById(R.id.todayRecovered);
         todayDeath = findViewById(R.id.todayDeath);
         pieChart = findViewById(R.id.piechart);
+
 
         dateTV = findViewById(R.id.date);
     }
